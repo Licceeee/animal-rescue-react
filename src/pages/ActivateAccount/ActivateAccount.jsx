@@ -16,17 +16,11 @@ export default function ActivateAccount() {
 
   useEffect(() => {
     data && setResponse(data);
-    data &&
-      data.verifyAccount.errors.nonFieldErrors.map((error) => {
-        return console.log(error);
-      });
   }, [data]);
 
   return (
     <div>
-      <p>joooo</p>
-      <small>{token}</small>
-      <p>------------------</p>
+      <h1>Account Activation</h1>
       {error && <p>error ... {error.message}</p>}
       {loading && <p>Loading ... </p>}
       {response && response.verifyAccount.success === true && <p>Verified</p>}
