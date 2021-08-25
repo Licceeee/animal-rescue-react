@@ -9,16 +9,4 @@ const VERIFYACCOUNT = gql`
   }
 `;
 
-const USERS = gql`
-  query {
-    users {
-      edges {
-        node {
-          email
-        }
-      }
-    }
-  }
-`;
-
-export { VERIFYACCOUNT, USERS };
+export { VERIFYACCOUNT };
