@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
-import { VERIFYACCOUNT } from "../../api/auth";
+import { VERIFYACCOUNT } from "../api/auth";
 
 export default function ActivateAccount() {
   const { token } = useParams();
