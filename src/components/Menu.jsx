@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Flex,
   Spacer,
@@ -13,16 +15,22 @@ export default function Menu() {
   return (
     <Flex p="4" boxShadow="base">
       <Box p="2">
-        <Heading size="md">Wet Cat App</Heading>
+        <Heading size="md">
+          <Link to="/">Wet Cat App</Link>
+        </Heading>
       </Box>
       <Spacer />
       <Box>
-        <Button colorScheme="gray" mr="4">
-          Sign Up
-        </Button>
-        <Button colorScheme="teal" mr="4">
-          Log in
-        </Button>
+        <Link to="/register">
+          <Button colorScheme="gray" mr="4">
+            Sign Up
+          </Button>
+        </Link>
+        <Link to="/login">
+          <Button colorScheme="teal" mr="4">
+            Sign In
+          </Button>
+        </Link>
         <IconButton
           colorScheme="teal"
           aria-label="Profile Settings"
