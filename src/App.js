@@ -4,16 +4,17 @@ import { Switch, Route } from "react-router-dom";
 // =================================================================== >> PAGES
 import Home from "./pages/Home";
 import ActivateAccount from "./pages/auth/ActivateAccount";
-
-// ============================================================== >> COMPONENTS
-import Menu from "./components/Menu";
 import Register from "./pages/auth/Register";
 import Login from "./pages/auth/Login";
+
+// ============================================================== >> COMPONENTS
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-      <Menu />
+      <NavBar />
 
       <Switch>
         <Route exact path="/">
@@ -32,6 +33,7 @@ function App() {
           <Login />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }
