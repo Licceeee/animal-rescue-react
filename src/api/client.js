@@ -6,7 +6,7 @@ const server = "https://paw-api.tornode.org/graphql/";
 const local = "http://127.0.0.1:8000/graphql/";
 
 const client = new ApolloClient({
-  uri: server,
+  uri: local,
   cache: new InMemoryCache(),
   fetchOptions: {
     mode: "no-cors",
