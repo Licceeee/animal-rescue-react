@@ -16,13 +16,7 @@ import {
 export default function Register() {
   const [registerUser, { data, loading, error }] = useMutation(REGISTER);
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm();
-
-  const onSubmit = (values) => {
+  const onSubmit2 = (values) => {
     return new Promise((resolve) => {
       console.log(values["email"]);
       try {
@@ -33,6 +27,7 @@ export default function Register() {
             password2: values["password2"],
           },
         });
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -40,6 +35,15 @@ export default function Register() {
       resolve();
     });
   };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  errors && console.log(errors["Email"]);
 
   return (
     <Flex
@@ -56,30 +60,28 @@ export default function Register() {
           <FormLabel htmlFor="email">Email</FormLabel>
           <Input
             id="email"
-            mb="3"
-            placeholder="placeholder@mail.com"
+            placeholder="Email"
             {...register("email", {
               required: "This is required",
               minLength: { value: 4, message: "Minimum length should be 4" },
             })}
           />
-          <FormLabel htmlFor="password">Password</FormLabel>
 
+          <FormLabel htmlFor="password">Password</FormLabel>
           <Input
-            m="3"
-            id="password1"
-            placeholder="At least 8 chars"
+            id="password"
+            placeholder="password"
             {...register("password1", {
               required: "This is required",
               minLength: { value: 4, message: "Minimum length should be 4" },
             })}
           />
-          <FormLabel htmlFor="password">Password repeat</FormLabel>
 
+          <FormLabel htmlFor="password">Password repeat</FormLabel>
           <Input
             id="password2"
-            placeholder="Repeat password"
-            {...register("password2", {
+            placeholder="password2"
+            {...register("name", {
               required: "This is required",
               minLength: { value: 4, message: "Minimum length should be 4" },
             })}
@@ -87,7 +89,6 @@ export default function Register() {
           <FormErrorMessage>
             {errors.name && errors.name.message}
           </FormErrorMessage>
-          {error && <FormErrorMessage>{error.message}</FormErrorMessage>}
         </FormControl>
         <Button
           mt={4}
@@ -95,7 +96,7 @@ export default function Register() {
           isLoading={isSubmitting}
           type="submit"
         >
-          Register
+          Submit
         </Button>
       </form>
     </Flex>
