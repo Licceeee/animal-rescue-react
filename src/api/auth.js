@@ -16,10 +16,6 @@ const REGISTER = gql`
       refreshToken
       success
       errors
-      unarchiving
-      user {
-        email
-      }
     }
   }
 `;

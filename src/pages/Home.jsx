@@ -14,7 +14,6 @@ export default function Home() {
       padding="2vw"
     >
       <Link to="/activate">Go to activation </Link>
-      <Link to="/activate">Go to activation </Link>
     </Flex>
   );
 }
